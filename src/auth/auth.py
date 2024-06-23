@@ -28,7 +28,7 @@ def fetch_access_token() -> str:
     else:
         raise Exception(f"Error obtaining access token: {response.json()}")
 
-def verify_access_token(access_token: str) -> None:
+def verify_access_token(access_token: str) -> dropbox.Dropbox:
     """
     Checks to see if an access token is valid, if it is not it will create a new one
 
