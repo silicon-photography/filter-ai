@@ -9,6 +9,15 @@
   - `cd frontend`
   - `npm start`
 
+<h5>Tech Stack</h5>
 <p>
-  <img src="Filter AI tech stack.pdf" width="350" title="Tech Stack and Designs">
+  <img src="Tech Stack.png" width="500" title="Tech Stack">
+</p>
+<h5>Homepage</h5>
+<p>
+  <img src="Home page.png" width="500" title="Homepage">
+</p>
+<h5>Calendar page</h5>
+<p>
+  <img src="Calendar.png" width="500" title="Calendar">
 </p>
