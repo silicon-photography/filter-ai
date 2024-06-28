@@ -8,3 +8,7 @@
 5. To run React
   - `cd frontend`
   - `npm start`
+
+<p>
+  <img src="" width="350" title="hover text">
+</p>
