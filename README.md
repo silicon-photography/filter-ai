@@ -10,5 +10,5 @@
   - `npm start`
 
 <p>
-  <img src="" width="350" title="hover text">
+  <img src="Filter AI tech stack.pdf" width="350" title="Tech Stack and Designs">
 </p>
