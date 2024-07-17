@@ -59,7 +59,7 @@ import {
     },
     {
       id: "4",
-      title: "New account",
+      title: "About Us",
       url: "#signup",
       onlyMobile: true,
     },

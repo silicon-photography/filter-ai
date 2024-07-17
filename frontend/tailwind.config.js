@@ -42,6 +42,7 @@ export default {
         sans: ["var(--font-sora)", ...fontFamily.sans],
         code: "var(--font-code)",
         grotesk: "var(--font-grotesk)",
+        inconsolata: "var(--font-inconsolata)"
       },
       letterSpacing: {
         tagline: ".15em",
@@ -122,7 +123,7 @@ export default {
           "@apply text-sm": {},
         },
         ".tagline": {
-          "@apply font-grotesk font-light text-xs tracking-tagline uppercase":
+          "@apply font-code font-light text-xs tracking-tagline uppercase":
             {},
         },
         ".quote": {

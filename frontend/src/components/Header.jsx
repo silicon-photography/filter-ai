@@ -1,7 +1,14 @@
+import { useLocation } from 'react-router-dom'
 import camerAI from "../assets/camerAI.png"; 
 import { navigation } from '../constants';
+import Button from './Button'
+
 
 const Header = () => {
+
+    // lets us know the current url we are on 
+    const pathname = useLocation();
+
     return (
         //create a fixed header that stays at the top of the page
       <div className="fixed top-0 z-50 bg-n-8/90 backdrop-blur-sm border-b
@@ -21,10 +28,12 @@ const Header = () => {
                         <a 
                         key={item.id}
                         href={item.url}
-                        className={`block relative font-inconsolata
+                        className={`block relative font-code
                         text-2xl uppercase text-n-1
                         transition-colors hover:text-color-1 ${item.onlyMobile ? "lg.hidden": ""}
-                        px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold
+                        px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-code ${item.url
+                            === pathname.hash ? 'z-2 lg:text-n-1' : 'lg:text-n-1/50'}                       }
+                        lg:leading-5 lg:hover:text-n-1 xl:px-12
                         `}
                         >
                             {item.title}
@@ -32,6 +41,11 @@ const Header = () => {
                     ))}
                 </div>
             </nav>
+            
+            <Button className = "hidden lg:flex" href="login">
+                Get Started
+            </Button>
+            
         </div>
       </div>
     );
