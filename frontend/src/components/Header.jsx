@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom'
+import { disablePageScroll, enablePageScroll } from 'scroll-lock'
 import camerAI from "../assets/camerAI.png"; 
 import { navigation } from '../constants';
 import Button from "./Button";
@@ -13,11 +14,29 @@ const Header = () => {
     const pathname = useLocation();
     const[openNavigation, setOpenNavigation] = useState
     (false);
+
+    const toggleNavigation = () => {
+      if (openNavigation) {
+        setOpenNavigation(false);
+        enablePageScroll();
+      } else{
+        setOpenNavigation(true);
+        disablePageScroll();
+      }
+
+    };
+
+    const handleClick = () => {
+      if(!openNavigation) return;
+
+      enablePageScroll();
+      setOpenNavigation(false);
+    };
     
 
     return (
         //create a fixed header that stays at the top of the page
-      <div className={`fixed top-0 left-0 w-full z-50 bg-n-8/90 backdrop-blur-sm border-b
+      <div className={`fixed top-0 left-0 w-full z-50 border-b
       border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${openNavigation ? 
         "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"
       }`}>
@@ -27,15 +46,16 @@ const Header = () => {
             <img src={camerAI} width={190} height={40} alt="CamerAI Logo" />
             </a>
 
-            <nav className="hidden fixed top-[5rem] left-0
+            <nav className={`${openNavigation ? 'flex' : 'hidden'}  fixed top-[5rem] left-0
             right-0 bottom-0 bg-n-8 lg:static lg:flex 
-            lg:mx-auto lg:bg-transparent">
+            lg:mx-auto lg:bg-transparent`}>
                 <div className="relative z-2 flex flex-col items-center justify-center
                 m-auto lg:flex-row">
                     {navigation.map((item) => (
                         <a 
                         key={item.id}
                         href={item.url}
+                        onClick={handleClick}
                         className={`block relative font-code
                         text-2xl uppercase text-n-1
                         transition-colors hover:text-color-1 ${item.onlyMobile ? "lg.hidden": ""}
@@ -48,10 +68,15 @@ const Header = () => {
                         </a>
                     ))}
                 </div>
+                <HamburgerMenu />
             </nav>
             
-            <Button className = "hidden lg:flex" href="login">
+            <Button className = "hidden lg:flex" href="#login">
                 Get Started
+            </Button>
+
+            <Button className="ml-auto lg:hidden" px="px-3" onClick={toggleNavigation}>
+              <MenuSvg openNavigation={openNavigation} />
             </Button>
             
         </div>
