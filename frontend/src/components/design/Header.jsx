@@ -1,4 +1,6 @@
+
 import { background } from "../../assets";
+
 
 export const Rings = () => {
   return (
@@ -18,7 +20,6 @@ export const SideLines = () => {
   );
 };
 
-//later here change the appearance of the background circles to fully white 
 export const BackgroundCircles = () => {
   return (
     <>
