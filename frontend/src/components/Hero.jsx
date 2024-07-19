@@ -1,5 +1,5 @@
 
-import { curve, heroBackground, robot } from "../assets";
+import { curve, heroBackground, robot} from "../assets";
 import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
@@ -9,6 +9,7 @@ import { useRef } from "react";
 import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
+import slider from "./slider.jpg";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -61,19 +62,25 @@ const Hero = () => {
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
-                    {heroIcons.map((icon, index) => (
-                      <li className="p-5" key={index}>
-                        <img src={icon} width={24} height={25} alt={icon} />
-                      </li>
-                    ))}
+                    <li className="p-5">
+                    
+                    <img src={slider} alt="Slider" style={{ width: '180px', height: 'auto' }} />
+                        
+                     </li>
+                    
+
                   </ul>
                 </ScrollParallax>
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <Notification
                     className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
-                    title="Code generation"
+                    title="Code Poopy"
                   />
+
+                    
+
+
                 </ScrollParallax>
               </div>
             </div>
