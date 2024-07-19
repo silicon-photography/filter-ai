@@ -10,6 +10,7 @@ import Generating from "./Generating";
 import Notification from "./Notification";
 import CompanyLogos from "./CompanyLogos";
 import slider from "./slider.jpg";
+import graph from "./graph.jpg";
 
 const Hero = () => {
   const parallaxRef = useRef(null);
@@ -72,16 +73,19 @@ const Hero = () => {
                   </ul>
                 </ScrollParallax>
 
-                <ScrollParallax isAbsolutelyPositioned>
-                  <Notification
-                    className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
-                    title="Code Poopy"
-                  />
 
+                <ScrollParallax isAbsolutelyPositioned>
+                  <ul className="hidden absolute -right-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
+                    <li className="p-5">
+                    
+                    <img src={graph} alt="Slider" style={{ width: '180px', height: 'auto' }} />
+                        
+                     </li>
                     
 
-
+                  </ul>
                 </ScrollParallax>
+
               </div>
             </div>
 
